@@ -24,8 +24,15 @@
 
                     <ul>
                         @foreach($data['city_list'] as $item)
+                            @php
+                                /* @var $item \App\Models\City */
+                            @endphp
                             <li class="header__location-list__sub-item">
-                                <a href="https://{{ $item->url }}.{{ SITE }}"
+                                @php
+                                    if ($item->info->domain) $domain = $item->info->domain;
+                                    else $domain = SITE;
+                                @endphp
+                                <a href="https://{{ $item->url }}.{{ $domain }}"
                                    class="header__location-list__sub-link link-reset">
                                     {{ $item->city }}
                                 </a>

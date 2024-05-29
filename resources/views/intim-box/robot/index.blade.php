@@ -17,6 +17,9 @@ User-agent: Yandex
 Disallow: /filter?*
 Disallow: /poisk?*
 Disallow: */amp/*
+Disallow: /login
+Disallow: /register
+Disallow: /favorite
 
 Clean-param: p
 

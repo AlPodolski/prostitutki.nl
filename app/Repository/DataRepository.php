@@ -71,7 +71,7 @@ class DataRepository
                 ->orderBy('value')
                 ->get();
 
-            $data['city_list'] = City::all();
+            $data['city_list'] = City::with('info')->get();
 
             $data['current_city'] = City::where('id', $cityId)->first();
 
