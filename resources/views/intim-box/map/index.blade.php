@@ -7,7 +7,7 @@
 
     <url>
         <loc>https://{{ $_SERVER['HTTP_HOST'] }}</loc>
-        <lastmod>2024-06-04</lastmod>
+        <lastmod>{{ \Carbon::now()->format('Y-m-d') }}</lastmod>
         <priority>1</priority>
     </url>
 
@@ -29,7 +29,7 @@
         @foreach($dataItem as $item)
             <url>
                 <loc>https://{{ $_SERVER['HTTP_HOST'] }}/{{ $item->filter_url }}</loc>
-                <lastmod>2024-06-04</lastmod>
+                <lastmod>{{ \Carbon::now()->format('Y-m-d') }}</lastmod>
                 <priority>0.9</priority>
             </url>
         @endforeach

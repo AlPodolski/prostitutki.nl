@@ -3,7 +3,7 @@
 
     <url>
         <loc>https://{{ $_SERVER['HTTP_HOST'] }}</loc>
-        <lastmod>2024-06-04</lastmod>
+        <lastmod>{{ \Carbon::now()->format('Y-m-d') }}</lastmod>
         <priority>1</priority>
     </url>
 
@@ -12,7 +12,7 @@
             @if(isset($item->filter_url))
                 <url>
                     <loc>https://{{ $_SERVER['HTTP_HOST'] }}/{{ $item->filter_url }}</loc>
-                    <lastmod>2024-06-04</lastmod>
+                    <lastmod>{{ \Carbon::now()->format('Y-m-d') }}</lastmod>
                     <priority>0.9</priority>
                 </url>
             @endif
