@@ -56,7 +56,7 @@
             @endforeach
         </div>
 
-        @if(isset($data['near_metro']))
+        @if(isset($data['near_metro']) and $data['near_metro']->first())
 
             <div class="near-metro">
                 Посмотрите также анкеты на соседних метро:
