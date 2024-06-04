@@ -4249,6 +4249,7 @@ function show_phone(object) {
     if (phone) {
 
         window.location.href = 'tel:+' + phone;
+
     } else {
 
         $.ajax({
@@ -4467,12 +4468,6 @@ function openMenu(object) {
     console.log(object);
     $(object).closest('.sidebar-filters__item').toggleClass('show-item');
 }
-
-window.addEventListener('scroll', function () {
-    mobilePhone.hidden = ((pageYOffset - 300) < document.documentElement.clientHeight);
-});
-
-
 function modal(object) {
 
     var target = $(object).attr('data-target');
@@ -4532,7 +4527,6 @@ noUiSlider.create(slider, {
 });
 
 slider.noUiSlider.on('update', function (values, handle) {
-    console.log(values);
     var age_from = document.getElementById('age-from')
     var age_to = document.getElementById('age-to')
     age_from.value = values[0];
@@ -4556,7 +4550,6 @@ noUiSlider.create(sliderVes, {
 });
 
 sliderVes.noUiSlider.on('update', function (values, handle) {
-    console.log(values);
     var from = document.getElementById('ves-from')
     var to = document.getElementById('ves-to')
     from.value = values[0];
@@ -4579,7 +4572,6 @@ noUiSlider.create(sliderGrud, {
 });
 
 sliderGrud.noUiSlider.on('update', function (values, handle) {
-    console.log(values);
     var from = document.getElementById('grud-from')
     var to = document.getElementById('grud-to')
     from.value = values[0];
@@ -4603,7 +4595,6 @@ noUiSlider.create(sliderPrice, {
 });
 
 sliderPrice.noUiSlider.on('update', function (values, handle) {
-    console.log(values);
     var from = document.getElementById('price-from')
     var to = document.getElementById('price-to')
     from.value = values[0];

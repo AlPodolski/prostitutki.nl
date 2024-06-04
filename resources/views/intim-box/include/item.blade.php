@@ -41,6 +41,9 @@
             </a>
             <a data-id="{{ $post->id }}"
                data-city="{{ $post->city_id }}"
+               @if($post->fake)
+                   href="tel:+{{ $post->phone }}"
+               @endif
                onclick="show_phone(this);ym(92632574,'reachGoal','Call')"
                class="catalog-item__phone">
                 <svg class="catalog-item__phone-icon">

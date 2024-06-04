@@ -2467,6 +2467,7 @@ footer {
     align-items: center;
     -webkit-transition: .3s;
     -o-transition: .3s;
+    justify-content: center;
     transition: .3s;
     font-size: 1.2857142857rem
 }
