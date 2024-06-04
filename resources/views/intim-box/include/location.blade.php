@@ -29,7 +29,7 @@
                             @endphp
                             <li class="header__location-list__sub-item">
                                 @php
-                                    if ($item->info->domain) $domain = $item->info->domain;
+                                    if (isset($item->info) and  $item->info->domain) $domain = $item->info->domain;
                                     else $domain = SITE;
                                 @endphp
                                 <a href="https://{{ $item->url }}.{{ $domain }}"

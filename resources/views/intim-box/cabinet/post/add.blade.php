@@ -218,26 +218,30 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="anket__info-location-select" id="anketMetroWrap">
-                                <label for="anketMetro">Метро:</label>
-                                <div class="anket__info-location-select-input">
-                                    <select name="metro" class="n-select" id="anketMetro">
-                                        @foreach($data['metro'] as $item)
-                                            <option value="{{ $item->id }}">{{ $item->value }}</option>
-                                        @endforeach
-                                    </select>
+                            @if($data['metro']->first())
+                                <div class="anket__info-location-select" id="anketMetroWrap">
+                                    <label for="anketMetro">Метро:</label>
+                                    <div class="anket__info-location-select-input">
+                                        <select name="metro" class="n-select" id="anketMetro">
+                                            @foreach($data['metro'] as $item)
+                                                <option value="{{ $item->id }}">{{ $item->value }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="anket__info-location-select" id="anketRegionWrap">
-                                <label for="anketRegion">Район:</label>
-                                <div class="anket__info-location-select-input">
-                                    <select name="rayon_id" class="n-select" id="anketRegion">
-                                        @foreach($data['rayon'] as $item)
-                                            <option value="{{ $item->id }}">{{ $item->value }}</option>
-                                        @endforeach
-                                    </select>
+                            @endif
+                            @if($data['rayon']->first())
+                                <div class="anket__info-location-select" id="anketRegionWrap">
+                                    <label for="anketRegion">Район:</label>
+                                    <div class="anket__info-location-select-input">
+                                        <select name="rayon_id" class="n-select" id="anketRegion">
+                                            @foreach($data['rayon'] as $item)
+                                                <option value="{{ $item->id }}">{{ $item->value }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -682,7 +686,8 @@
                                 <img src="images/cam.png" alt="">
                                 Загрузить фото
                             </label>
-                            <input type="file" multiple name="anketCheckPhoto" id="anketCheckPhoto" accept=".jpg, .jpeg">
+                            <input type="file" multiple name="anketCheckPhoto" id="anketCheckPhoto"
+                                   accept=".jpg, .jpeg">
                         </div>
                     </div>
                 </div>

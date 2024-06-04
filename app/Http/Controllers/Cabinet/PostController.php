@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Cabinet;
 
 use App\Actions\Publication;
 use App\Http\Controllers\Controller;
+use App\Models\Metro;
 use App\Models\Post;
 use App\Models\Photo;
 use App\Models\PostMetro;
 use App\Models\PostPlace;
 use App\Models\PostService;
+use App\Models\Rayon;
 use App\Models\Tarif;
 use App\Models\UserChat;
 use Illuminate\Http\Request;
@@ -64,6 +66,9 @@ class PostController extends Controller
         $post->publication_status = Post::POST_ON_MODERATION;
 
         $post->fill($request->post());
+
+        if (Rayon::where('id', $post->rayon_id)->where('city_id', $post->city_id)->first())
+            $post->rayon_id = null;
 
         if ($post->save()) {
 
@@ -121,7 +126,9 @@ class PostController extends Controller
 
             if ($metroId = $request->post('metro')) {
 
-                PostMetro::create([
+                $metroInfo = Metro::where('id', $metroId)->where('city_id', $post->city_id)->first();
+
+                if ($metroInfo) PostMetro::create([
                     'metros_id' => $metroId,
                     'posts_id' => $post->id,
                     'city_id' => $post->city_id
