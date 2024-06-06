@@ -23,7 +23,7 @@
 
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>Неверный логин или пароль</strong>
                                     </span>
                                 @enderror
                             </div>

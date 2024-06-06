@@ -25,7 +25,7 @@ class IndexController extends Controller
         $posts = $this->postRepository->getForMain($cityInfo['id']);
         $data = $this->dataRepository->getData($cityInfo['id']);
 
-        $meta = $metaRepository->getForMain('/', $cityInfo, $request);
+        $meta = $metaRepository->getForMain( $cityInfo, $request);
 
         $path = (new Canonical())->get($request->getRequestUri());
 

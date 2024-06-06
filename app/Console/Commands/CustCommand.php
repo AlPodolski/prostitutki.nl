@@ -20,22 +20,26 @@ class CustCommand extends Command
 
     public function handle()
     {
-        $city = City::where('id', '>', 1)->get();
+        $city = City::with('info')->get();
 
-        $host = 'intim-boxx.com';
+        $host = 'proctitytki.com';
 
         $dataRepository = new DataRepository();
 
         foreach ($city as $item){
 
-            $domain = 'https://'.$item->url.'.'.$host;
+            if ($item->info->actual_city) $domain = 'https://'.$item->info->actual_city.'.'.$host;
+
+            else $domain = 'https://'.$item->url.'.'.$host;
+
+            dd($domain);
 
             $data = $this->prepareData($dataRepository->getData($item->id), $domain.'/');
 
             $requestData = array(
                 'host' => $item->url.'.'.$host,
-                'key' => 'UhfuXuDnsB8FlpOT9Fds5iaZLzYqQh86MfgsSlIQIFVZO3HN',
-                'keyLocation' => $domain.'/UhfuXuDnsB8FlpOT9Fds5iaZLzYqQh86MfgsSlIQIFVZO3HN.txt',
+                'key' => 'vcwP8KHhgk0DOShDlWPq',
+                'keyLocation' => $domain.'/vcwP8KHhgk0DOShDlWPq.txt',
                 'urlList' => $data,
             );
 

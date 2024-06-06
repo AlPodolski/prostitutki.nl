@@ -2659,8 +2659,13 @@ footer {
 @media (max-width: 1199px) {
     .toggle-filter{
         display: block;
-        margin-top: 24px;
-        text-decoration: underline;
+        border: 1px solid #4927e8;
+        max-width: 150px;
+        text-align: center;
+        padding: 5px;
+        border-radius: 10px;
+        margin: auto;
+        margin-top: 15px;
     }
     .filter-wrap .close-panel {
         display: flex

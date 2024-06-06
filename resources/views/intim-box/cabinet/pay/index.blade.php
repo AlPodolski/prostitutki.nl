@@ -21,7 +21,14 @@
                     Пополните счет любым удобным ддля вас споссбом
                 </div>
             </div>
+
             <form class="ammount__info-balance-repl" method="post" action="/cabinet/pay">
+                @error('msg')
+
+                <strong>При оплате возникла ошибка, повторите попытку позже или попробуйте другой способ оплаты</strong>
+                <br>
+
+                @enderror
                 @csrf
                 <label for="balanceReplCur">Введите сумму пополнения(минимум 500р)</label>
                 <div class="ammount__info-balance-repl-input-wrap">
@@ -43,7 +50,7 @@
                         <div class="ammount__info-balance-repl-radio-item">
                             <input type="radio" name="currency"
                                    @if($currencies->first() == $item) checked @endif
-                                    value="{{ $item->value }}" id="balanceRepl{{ $item->value }}"
+                                   value="{{ $item->value }}" id="balanceRepl{{ $item->value }}"
                                    class="ammount__info-balance-repl-radio-input">
                             <label for="balanceRepl{{ $item->value }}">
                                 {{ $item->name }}
@@ -53,12 +60,12 @@
                     @endforeach
 
 
-
                 </div>
 
                 <script defer src='https://www.google.com/recaptcha/api.js'></script>
 
-                <div id="register_recapcha" class="g-recaptcha" data-sitekey="6Lffq2EkAAAAAK4PuAXJjhnE1NOP1uUjANyEUxe_"></div>
+                <div id="register_recapcha" class="g-recaptcha"
+                     data-sitekey="6Lffq2EkAAAAAK4PuAXJjhnE1NOP1uUjANyEUxe_"></div>
 
                 <button
                     id="payBtn"
@@ -87,7 +94,7 @@
                             }
                         @endphp
                         <div data-sum="{{ $sum }}" onclick="setSum(this)"
-                           class="ammount__fast-item-btn btn-main">
+                             class="ammount__fast-item-btn btn-main">
                             Оплатить
                         </div>
                     </div>

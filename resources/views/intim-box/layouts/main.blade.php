@@ -115,7 +115,7 @@
                         @yield('main-menu')
                     @endif
                     <div class="catalog">
-                        <div itemscope itemtype="http://schema.org/SiteNavigationElement" class=" main-top-menu">
+                        <div itemscope itemtype="https://schema.org/SiteNavigationElement" class=" main-top-menu">
                             <meta itemprop="name" content="Навигационное Меню">
                             <ul class=" main-top-menu__list">
                                 <li class="main-top-menu__item">

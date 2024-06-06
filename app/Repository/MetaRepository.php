@@ -10,25 +10,48 @@ use Carbon\Carbon;
 class MetaRepository
 {
 
-    public function getForMain($url, $cityInfo, $request)
+    public function getForMain( $cityInfo, $request)
     {
 
-        $value = \Cache::get('meta_'.$url.'_'.$cityInfo['id'].'_site_id_'.SITE);
+        $value = \Cache::get('meta_'.$request->requestUri.'_'.$cityInfo['id'].'_site_id_'.SITE);
 
         if (!$value){
 
-            $meta = Meta::where(['url' => $url])
+            $meta = Meta::where(['url' => '/'])
                 ->where('site_id', SITE_ID)
                 ->select('title', 'des', 'h1')
-                ->get()->first();
+                ->get()
+                ->first();
 
-            if ($meta) $value = $this->replaceCity($meta->toArray(), $cityInfo);
+            if ($meta) {
 
-            \Cache::set('meta_'.$url.'_'.$cityInfo['id'].'_site_id_'.SITE, $value);
+                $value = $this->replaceCity($meta->toArray(), $cityInfo);
+
+                $value = $this->addPageNum($value);
+
+            }
+
+            \Cache::set('meta_/_'.$cityInfo['id'].'_site_id_'.SITE, $value);
 
         }
 
         return $value;
+
+    }
+
+    private function addPageNum($meta){
+
+        if (isset($_GET['page'])) {
+
+            foreach ($meta as $key => &$value) {
+
+                if ($key == 'title' or $key == 'des')$value = $value . ' страница № ' .$_GET['page'];
+
+            }
+
+        }
+
+        return $meta;
 
     }
 
