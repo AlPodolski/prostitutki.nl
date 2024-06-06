@@ -305,59 +305,76 @@
                                                 {{ $post->price }}
                                             </div>
                                         </li>
-                                        <li class="profile-main-info__characters-price-sub-item">
-                                            <div class="profile-main-info__characters-price-sub-name">
-                                                Два часа:
-                                            </div>
-                                            <div class="profile-main-info__characters-price-sub-cur price">
-                                                {{ $post->apartament_2_hour_price }}
-                                            </div>
-                                        </li>
-                                        <li class="profile-main-info__characters-price-sub-item">
-                                            <div class="profile-main-info__characters-price-sub-name">
-                                                Ночь:
-                                            </div>
-                                            <div class="profile-main-info__characters-price-sub-cur price">
-                                                {{ $post->apartament_night_price }}
-                                            </div>
-                                        </li>
+                                        @if($post->apartament_2_hour_price)
+                                            <li class="profile-main-info__characters-price-sub-item">
+                                                <div class="profile-main-info__characters-price-sub-name">
+                                                    Два часа:
+                                                </div>
+                                                <div class="profile-main-info__characters-price-sub-cur price">
+                                                    {{ $post->apartament_2_hour_price }}
+                                                </div>
+                                            </li>
+                                        @endif
+
+                                        @if($post->apartament_night_price)
+                                            <li class="profile-main-info__characters-price-sub-item">
+                                                <div class="profile-main-info__characters-price-sub-name">
+                                                    Ночь:
+                                                </div>
+                                                <div class="profile-main-info__characters-price-sub-cur price">
+                                                    {{ $post->apartament_night_price }}
+                                                </div>
+                                            </li>
+                                        @endif
                                     </ul>
                                 </div>
                             </li>
-                            <li class="profile-main-info__characters-price__item">
-                                <div class="profile-main-info__characters-price__wrapper">
-                                    <div class="profile-main-info__characters-price-name">
-                                        <img src="/intim-box/images/graphics/icons/auto.svg" alt="">
-                                        Выезд
+                            @if($post->exit_1_hour_price or $post->exit_2_hour_price or $post->exit_night_price)
+                                <li class="profile-main-info__characters-price__item">
+                                    <div class="profile-main-info__characters-price__wrapper">
+                                        <div class="profile-main-info__characters-price-name">
+                                            <img src="/intim-box/images/graphics/icons/auto.svg" alt="">
+                                            Выезд
+                                        </div>
+                                        <ul class="profile-main-info__characters-price-sub-list">
+                                            @if($post->exit_1_hour_price)
+                                                <li class="profile-main-info__characters-price-sub-item">
+                                                    <div class="profile-main-info__characters-price-sub-name">
+                                                        Час:
+                                                    </div>
+                                                    <div class="profile-main-info__characters-price-sub-cur price">
+                                                        {{ $post->exit_1_hour_price }}
+                                                    </div>
+                                                </li>
+                                            @endif
+
+                                            @if($post->exit_2_hour_price)
+                                                <li class="profile-main-info__characters-price-sub-item">
+                                                    <div class="profile-main-info__characters-price-sub-name">
+                                                        Два часа:
+                                                    </div>
+                                                    <div class="profile-main-info__characters-price-sub-cur price">
+                                                        {{ $post->exit_2_hour_price }}
+                                                    </div>
+                                                </li>
+                                            @endif
+
+                                            @if($post->exit_night_price)
+                                                <li class="profile-main-info__characters-price-sub-item">
+                                                    <div class="profile-main-info__characters-price-sub-name">
+                                                        Ночь:
+                                                    </div>
+                                                    <div class="profile-main-info__characters-price-sub-cur price">
+                                                        {{ $post->exit_night_price }}
+                                                    </div>
+                                                </li>
+                                            @endif
+
+                                        </ul>
                                     </div>
-                                    <ul class="profile-main-info__characters-price-sub-list">
-                                        <li class="profile-main-info__characters-price-sub-item">
-                                            <div class="profile-main-info__characters-price-sub-name">
-                                                Час:
-                                            </div>
-                                            <div class="profile-main-info__characters-price-sub-cur price">
-                                                {{ $post->exit_1_hour_price }}
-                                            </div>
-                                        </li>
-                                        <li class="profile-main-info__characters-price-sub-item">
-                                            <div class="profile-main-info__characters-price-sub-name">
-                                                Два часа:
-                                            </div>
-                                            <div class="profile-main-info__characters-price-sub-cur price">
-                                                {{ $post->exit_2_hour_price }}
-                                            </div>
-                                        </li>
-                                        <li class="profile-main-info__characters-price-sub-item">
-                                            <div class="profile-main-info__characters-price-sub-name">
-                                                Ночь:
-                                            </div>
-                                            <div class="profile-main-info__characters-price-sub-cur price">
-                                                {{ $post->exit_night_price }}
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
+                                </li>
+                            @endif
+
                         </ul>
                     </li>
                     <li class="profile-main-info__characters-item">

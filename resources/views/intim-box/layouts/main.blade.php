@@ -167,7 +167,6 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="alert">Скажите что звоните с сайте intim-box.com и получите скидку</div>
                         @yield('content')
                     </div>
                 </div>
