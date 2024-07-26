@@ -7,7 +7,10 @@
             <picture class="listing-slick"  onclick="openPost(this)" data-url="/post/{{ $post->url }}">
                 <source srcset="/400-500/thumbs/{{str_replace('.jpg', '.webp', $post->avatar)}}" type="image/webp">
                 <source srcset="/400-500/thumbs/{{$post->avatar}}" type="image/jpeg">
-                <img class="catalog-item__img" src="/400-500/thumbs/{{$post->avatar}}"
+                <img class="catalog-item__img"
+                     width="362px"
+                     height="500px"
+                     src="/400-500/thumbs/{{$post->avatar}}"
                      alt="{{ $post->alt }}"
                      @if(!isset($i) or $i > 2)
                          loading="lazy"
