@@ -38,7 +38,9 @@
     @if(View::hasSection('lightbox_css'))
         <link rel="stylesheet" href="@yield('lightbox_css')">
     @endif
-    <link rel="stylesheet" href="/intim-box/css/style.css?v=22">
+    <link rel="preload" as="font" href="/intim-box/fonts/Circe/Circe-Regular.woff2" crossorigin>
+    <link rel="preload" as="font" href="/intim-box/fonts/Circe/Circe-Bold.woff2" crossorigin>
+    <link rel="stylesheet" href="/intim-box/css/style.css?v=23">
 </head>
 
 <body>
