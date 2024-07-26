@@ -12,7 +12,7 @@
             @if(isset($item->filter_url))
                 <url>
                     <loc>https://{{ $_SERVER['HTTP_HOST'] }}/{{ $item->filter_url }}</loc>
-                    <lastmod>{{ \Carbon::now()->format('Y-m-d') }}</lastmod>
+                    <lastmod>{{ \Carbon\Carbon::now()->format('Y-m-d') }}</lastmod>
                     <priority>0.9</priority>
                 </url>
             @endif
