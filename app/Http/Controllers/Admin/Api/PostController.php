@@ -10,8 +10,9 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
 
-    private $postRepository;
-    private $cityRepository;
+    protected $postRepository;
+
+    protected $cityRepository;
 
     public function __construct()
     {
