@@ -10,14 +10,8 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
 
-    protected $postRepository;
-
-    protected $cityRepository;
-
     public function __construct()
     {
-        $this->cityRepository = new \App\Repository\CityRepository();
-        $this->dataRepository = new DataRepository();
 
         parent::__construct();
     }
