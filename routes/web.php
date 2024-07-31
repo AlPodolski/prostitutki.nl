@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::domain('admin.' . SITE)->group(function () {
+    Route::post('/api/post', 'App\Http\Controllers\Admin\Api\PostController@index');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
