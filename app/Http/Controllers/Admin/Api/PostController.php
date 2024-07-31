@@ -42,7 +42,7 @@ class PostController extends Controller
                 'name' => $post->name,
                 'age' => $post->age,
                 'url' => 'https://' . $cityInfo->info->actual_city . '.'.$domain.'/post/' . $post->url,
-                'photo' => 'https://' . $cityInfo->info->actual_city . '.' . $domain . '/521-741/thumbs'.$post->avatar
+                'photo' => 'https://' . $cityInfo->info->actual_city . '.' . $domain . '/521-741/thumbs/'.$post->avatar
             ];
 
             echo json_encode($result);
