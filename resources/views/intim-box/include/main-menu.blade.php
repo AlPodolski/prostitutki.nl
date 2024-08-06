@@ -42,17 +42,20 @@
                     <span itemprop="name">Массажистки</span>
                 </a>
             </li>
-            <li class="sidebar__types-item">
-                <a itemprop="url"
-                   title="Проститутки с расположением на карте"
-                   href="/intim-karta"
-                   class="sidebar__types-link link-reset">
-                    <svg class="sidebar__types-icon">
-                        <use xlink:href="/svg/dest/stack/sprite.svg#location"></use>
-                    </svg>
-                    <span itemprop="name">Интим-карта</span>
-                </a>
-            </li>
+            @if($data['current_city']->id == 1)
+                <li class="sidebar__types-item">
+                    <a itemprop="url"
+                       title="Проститутки с расположением на карте"
+                       href="/intim-karta"
+                       class="sidebar__types-link link-reset">
+                        <svg class="sidebar__types-icon">
+                            <use xlink:href="/svg/dest/stack/sprite.svg#location"></use>
+                        </svg>
+                        <span itemprop="name">Интим-карта</span>
+                    </a>
+                </li>
+            @endif
+
             <li class="sidebar__types-item">
                 <a itemprop="url"
                    title="Избранное"
