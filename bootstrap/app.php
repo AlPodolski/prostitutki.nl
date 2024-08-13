@@ -21,6 +21,11 @@ elseif (strpos($_SERVER['HTTP_HOST'], 'prostitutki.nl')){
     define("PATH", 'prostitutki_nl');
     define("SITE_ID", 1);
 }
+elseif (strpos($_SERVER['HTTP_HOST'], 'intim-now.com')){
+    define("SITE", 'intim-now.com');
+    define("PATH", 'intim-box');
+    define("SITE_ID", 2);
+}
 elseif (strpos($_SERVER['HTTP_HOST'], 'prostitutki-nl.com')){
     define("SITE", 'prostitutki-nl.com');
     define("PATH", 'prostitutki_nl');
@@ -28,6 +33,47 @@ elseif (strpos($_SERVER['HTTP_HOST'], 'prostitutki-nl.com')){
 }
 elseif (strpos($_SERVER['HTTP_HOST'], 'proctytutki.com')){
     define("SITE", 'proctytutki.com');
+    define("PATH", 'intim-box');
+    define("SITE_ID", 2);
+}
+elseif (strpos($_SERVER['HTTP_HOST'], 'prostitutkitasty.com')){
+    define("SITE", 'prostitutkitasty.com');
+    define("PATH", 'intim-box');
+    define("SITE_ID", 2);
+}
+elseif (strpos($_SERVER['HTTP_HOST'], 'prostitutkiportal.com')){
+    define("SITE", 'prostitutkiportal.com');
+    define("PATH", 'intim-box');
+    define("SITE_ID", 2);
+}
+
+elseif (strpos($_SERVER['HTTP_HOST'], 'dosug-nights.com')){
+    define("SITE", 'dosug-nights.com');
+    define("PATH", 'intim-box');
+    define("SITE_ID", 2);
+}
+elseif (strpos($_SERVER['HTTP_HOST'], 'prostitutki-service.com')){
+    define("SITE", 'prostitutki-service.com');
+    define("PATH", 'intim-box');
+    define("SITE_ID", 2);
+}
+elseif (strpos($_SERVER['HTTP_HOST'], 'prostitutki-tasty.com')){
+    define("SITE", 'prostitutki-tasty.com');
+    define("PATH", 'intim-box');
+    define("SITE_ID", 2);
+}
+elseif (strpos($_SERVER['HTTP_HOST'], 'intim-hub.com')){
+    define("SITE", 'intim-hub.com');
+    define("PATH", 'intim-box');
+    define("SITE_ID", 2);
+}
+elseif (strpos($_SERVER['HTTP_HOST'], 'prostitutki-box.com')){
+    define("SITE", 'prostitutki-box.com');
+    define("PATH", 'intim-box');
+    define("SITE_ID", 2);
+}
+elseif (strpos($_SERVER['HTTP_HOST'], 'prostitutkyhub.com')){
+    define("SITE", 'prostitutkyhub.com');
     define("PATH", 'intim-box');
     define("SITE_ID", 2);
 }
