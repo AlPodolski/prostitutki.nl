@@ -21,6 +21,21 @@ elseif (strpos($_SERVER['HTTP_HOST'], 'prostitutki.nl')){
     define("PATH", 'prostitutki_nl');
     define("SITE_ID", 1);
 }
+elseif (strpos($_SERVER['HTTP_HOST'], 'prostitutki-nl.com')){
+    define("SITE", 'prostitutki-nl.com');
+    define("PATH", 'prostitutki_nl');
+    define("SITE_ID", 1);
+}
+elseif (strpos($_SERVER['HTTP_HOST'], 'proctytutki.com')){
+    define("SITE", 'proctytutki.com');
+    define("PATH", 'intim-box');
+    define("SITE_ID", 2);
+}
+elseif (strpos($_SERVER['HTTP_HOST'], 'proctitytki.com')){
+    define("SITE", 'proctitytki.com');
+    define("PATH", 'intim-box');
+    define("SITE_ID", 2);
+}
 elseif (strpos($_SERVER['HTTP_HOST'], 'proctitytkihub.com')){
     define("SITE", 'proctitytkihub.com');
     define("PATH", 'intim-box');
@@ -32,7 +47,7 @@ elseif (strpos($_SERVER['HTTP_HOST'], 'proctitytkizone.com')){
     define("SITE_ID", 2);
 }
 elseif (strpos($_SERVER['HTTP_HOST'], 'proctitytkisensual.com')){
-    define("SITE", 'proctitytkizone.com');
+    define("SITE", 'proctitytkisensual.com');
     define("PATH", 'intim-box');
     define("SITE_ID", 2);
 }
