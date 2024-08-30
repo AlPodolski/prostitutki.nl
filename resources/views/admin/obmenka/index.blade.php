@@ -6,12 +6,16 @@
 
     @include('admin.include.nav')
 
-    <p>За месяц {{ $monthCount }}</p>
+    @if(isset($monthCount))
+        <p>За месяц {{ $monthCount }}</p>
+    @endif
 
-    @if($weekPay)
-        @foreach($weekPay as $key => $value)
-            {{ $key }} - {{ $value }}<br>
-        @endforeach
+    @if(isset($weekPay))
+        @if($weekPay)
+            @foreach($weekPay as $key => $value)
+                {{ $key }} - {{ $value }}<br>
+            @endforeach
+        @endif
     @endif
 
     @gridView($gridData)
