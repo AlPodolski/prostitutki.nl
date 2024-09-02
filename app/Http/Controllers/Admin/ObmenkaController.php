@@ -77,6 +77,6 @@ class ObmenkaController extends Controller
     {
         $orders = Order::orderByDesc('id')->where('user_id', $id)->paginate(40);
 
-        return view('admin.obmenka.index', compact('orders'));
+        return view('admin.obmenka.user', compact('orders'));
     }
 }
