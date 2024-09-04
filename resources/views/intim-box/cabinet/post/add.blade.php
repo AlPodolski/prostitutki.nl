@@ -39,7 +39,7 @@
                     </div>
                     <div class="anket__main-info-item input-wrap">
                         <label for="anketPhone">Телефон</label>
-                        <input type="text" name="phone" class="anket__main-info-input input" id="phone" required>
+                        <input type="text" name="phone" class="anket__main-info-input input posts-phone" id="phone" required>
                     </div>
                     <div class="anket__main-info-item input-wrap">
                         <label for="anketTelegram">Telegram</label>
