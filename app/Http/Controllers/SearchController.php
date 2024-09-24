@@ -49,7 +49,9 @@ class SearchController extends Controller
     {
         $city = $request->post('city');
 
-        $cityList = City::where('city', 'like', '%'.$city.'%')->get();
+        $cityList = City::where('city', 'like', '%'.$city.'%')
+            ->with('info')
+            ->get();
 
         return view('intim-box.search.city', compact('city', 'cityList'));
 
