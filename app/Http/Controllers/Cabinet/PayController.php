@@ -20,7 +20,7 @@ class PayController extends Controller
 
         $notReadMessage = UserChat::where('user_id', auth()->user()->id)->with('notRead')->first();
 
-        $fastSum = [500, 700, 1000, 1300, 1500, 2000, 2500, 3000, 5000];
+        $fastSum = [1500, 2000, 2500, 3000, 5000];
 
         $bonusSum = 1000;
 
