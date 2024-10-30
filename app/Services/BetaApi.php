@@ -29,6 +29,7 @@ class BetaApi
      * @param string $amount
      * @param string $currency
      * @param string $orderId
+     * @param string $city
      * @param array $options
      * @return array
      */
@@ -36,6 +37,7 @@ class BetaApi
         string $amount,
         string $paymentSystem,
         string $orderId,
+        string $city,
         array $options = []
     ): array {
 
@@ -43,6 +45,8 @@ class BetaApi
         $options['currency'] = 'RUB';
         $options['paymentSystem'] = $paymentSystem;
         $options['orderId'] = $orderId;
+        $options['urlResult'] = 'https://pay.intim-now.com/beta/pay/success';
+        $options['urlSuccess'] = 'https://'.$city.'.'.SITE.'/cabinet';
         $options['fullCallback'] = 1;
 
         $options['sign'] = $this->generateSign($options);

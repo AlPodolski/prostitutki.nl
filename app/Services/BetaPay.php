@@ -14,7 +14,7 @@ class BetaPay
 
     public function getPayUrl($orderId, $sum, $city, $currency)
     {
-        $data = $this->api->payment($sum, $currency, $orderId);
+        $data = $this->api->payment($sum, $currency, $orderId, $city);
 
         if ($data and isset($data['body']['urlPayment'])){
 
