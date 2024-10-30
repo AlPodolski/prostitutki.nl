@@ -12,10 +12,11 @@ class BetaController extends Controller
     {
         $orderId = $request->post('orderId');
         $amount = $request->post('amount');
+        $status = $request->post('status');
 
         $order = Order::where('id',$orderId )->where('status', Order::WAIT)->first();
 
-        if ($order){
+        if ($order and $status == 'success'){
 
             $user = User::where('id', $order->user_id)->first();
 
