@@ -8,6 +8,7 @@ use App\Models\Currency;
 use App\Models\Order;
 use App\Models\UserChat;
 use App\Services\Obmenka;
+use App\Services\PayService;
 use Illuminate\Http\Request;
 
 class PayController extends Controller
@@ -31,22 +32,27 @@ class PayController extends Controller
 
     }
 
-    public function processing($city, PayRequest $request, Obmenka $obmenka)
+    public function processing($city, PayRequest $request)
     {
 
         $data = $request->validated();
+
+        $currency = Currency::where('value', $data['currency'])->first();
 
         $order = new Order();
 
         $order->user_id = auth()->id();
         $order->sum = $data['sum'];
         $order->status = Order::WAIT;
+        $order->payment_system = $currency->payment_system;
 
         if ($order->save()){
 
-            if ($result = $obmenka->getPayUrl($order->id, $data['sum'], $city, $data['currency'])){
+            $payService = new PayService($currency->payment_system);
 
-                return redirect($result->pay_link);
+            if ($payLink = $payService->getPayUrl($order->id, $data['sum'], $city, $data['currency'])){
+
+                return redirect($payLink);
 
             }
 

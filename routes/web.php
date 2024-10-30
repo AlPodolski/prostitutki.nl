@@ -18,6 +18,10 @@ Route::domain('admin.' . SITE)->group(function () {
     Route::post('/api/post', 'App\Http\Controllers\Admin\Api\PostController@index');
 });
 
+Route::domain('pay.' . SITE)->group(function () {
+    Route::post('/beta/pay/success', 'App\Http\Controllers\BetaController');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
