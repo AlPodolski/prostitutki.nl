@@ -72,6 +72,8 @@ class PostController extends Controller
 
         if ($post->save()) {
 
+            $post->phone = preg_replace('/[^0-9]/', '', $post->phone);
+
             $post->url = \Str::slug($post->name . '-') . $post->id;
 
             $dir = \substr(\md5($post->url), 0, 3);
@@ -228,6 +230,8 @@ class PostController extends Controller
         if (!$post) abort(404);
 
         $post->fill($request->post());
+
+        $post->phone = preg_replace('/[^0-9]/', '', $post->phone);
 
         $dir = \substr(\md5($post->url), 0, 3);
 
