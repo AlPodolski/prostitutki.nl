@@ -65,7 +65,7 @@
 
 </div>
 
-<script defer src="/intim-box/js/cabinet.js?v=29"></script>
+<script defer src="/intim-box/js/cabinet.js?v=30"></script>
 </body>
 
 </html>

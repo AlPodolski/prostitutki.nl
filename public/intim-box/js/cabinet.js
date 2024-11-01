@@ -3273,6 +3273,6 @@ $.fn.extend({
 
 
 $(document).ready(function() {
-    $(".posts-phone").mask("+7(999)99-99-999");
+    $("#phone").mask("+7(999)99-99-999");
 });
 
