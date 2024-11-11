@@ -16,7 +16,7 @@ class BetaController extends Controller
 
         $order = Order::where('id',$orderId )->where('status', Order::WAIT)->first();
 
-        if ($order and $status == 'success'){
+        if ($order and ($status == 'success' or $status == 'partial_payment')){
 
             $user = User::where('id', $order->user_id)->first();
 
