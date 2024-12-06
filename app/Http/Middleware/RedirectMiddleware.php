@@ -22,7 +22,7 @@ class RedirectMiddleware
 
             $redirect = Cache::remember('redirect_' . $actualCity.'_'.SITE, $expire, function () use ($actualCity) {
 
-                $redirect = Redirect::where('from', $actualCity)->where('site', SITE_ID)->first();
+                $redirect = Redirect::where('from', $actualCity)->where('site', SITE)->first();
 
                 if ($redirect) return $redirect;
 

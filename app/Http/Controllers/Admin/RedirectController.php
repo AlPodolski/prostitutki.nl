@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Actions\AddToCloud;
 use App\Http\Controllers\Controller;
+use App\Models\ActualCityInfo;
 use App\Models\CloudZone;
 use App\Models\Redirect;
 use Illuminate\Http\Request;
@@ -19,7 +20,12 @@ class RedirectController extends Controller
 
     public function create()
     {
-        return view('admin.redirect.create');
+
+        $domains = ActualCityInfo::select('domain', \DB::raw('MAX(id) as id'))
+                ->groupBy('domain')
+                ->get();
+
+        return view('admin.redirect.create', compact('domains'));
     }
 
     public function store(Request $request)

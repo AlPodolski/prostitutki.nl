@@ -32,8 +32,9 @@
             <labe for="site">Выбрать сайт</labe>
 
             <select class="form-control" name="site" id="site">
-                <option value="1">PR.NL</option>
-                <option value="2">INTIM-BOX</option>
+                @foreach($domains as $domain )
+                    <option value="{{ $domain->domain }}">{{ $domain->domain }}</option>
+                @endforeach
             </select>
 
         </div>
